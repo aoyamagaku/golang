@@ -3,5 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello World")
+	score := 4
+
+	if score > 5 {
+		fmt.Println("Ты крутой")
+	} else {
+		fmt.Println("Тебе нужно тренироваться")
+	}
 }
