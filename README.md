@@ -19,7 +19,7 @@ Each folder is one topic, numbered in the order I learned them.
 ## Run
 
 ```bash
-go run ./08-pointers
+go run main.go
 ```
 
 Go 1.27
