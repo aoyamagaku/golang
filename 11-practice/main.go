@@ -93,12 +93,12 @@ func main() {
 	x := 3
 	y := 8
 	fmt.Println("Before *:", x, y)
-	swap(x, y)
+	swap(&x, &y)
 	fmt.Println("After *:", x, y)
 }
 
-func swap(a, b int) {
-	num := a
-	a = b
-	b = num
+func swap(a, b *int) {
+	num := *a
+	*a = *b
+	*b = num
 }
