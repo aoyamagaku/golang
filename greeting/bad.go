@@ -3,5 +3,5 @@ package greeting
 import "fmt"
 
 func BadWords() {
-	fmt.Println("***")
+	fmt.Println("Very bad words")
 }
