@@ -1,27 +1,27 @@
 package main
 
-type User struct {
-	Name    string
-	Rating  float64
-	Premium bool
-}
+import "fmt"
 
 func main() {
-
 	userArray := []User{
 		User{
-			Name:    "Bob",
-			Rating:  5.5,
+			Name:    "John",
+			Rating:  4.5,
 			Premium: true,
 		},
 		User{
-			Name:    "Alice",
-			Rating:  4.1,
+			Name:    "Jane",
+			Rating:  3.5,
 			Premium: false,
 		},
 		User{
-			Name:    "Max",
-			Rating:  1.5,
+			Name:    "Mike",
+			Rating:  1.2,
+			Premium: true,
+		},
+		User{
+			Name:    "Michael",
+			Rating:  8.1,
 			Premium: true,
 		},
 	}
@@ -29,25 +29,38 @@ func main() {
 	userArray = append(userArray, User{
 		Name:    "Max",
 		Rating:  7.9,
-		Premium: true,
+		Premium: false,
 	})
 
-
-	//fmt.Println("Before")
-	//
-	//for i := range userArray {
-	//	fmt.Println(userArray[i])
-	//}
-	//
-	//for i := range userArray {
+	for i := range userArray {
+		fmt.Println(userArray[i])
+	}
+	fmt.Println("------")
+	//for i := range userArray { САМЫЙ СИНТАКСИЧЕСКИ ПРАВИЛЬНЫЙ ВАРИАНТ
 	//	if userArray[i].Premium {
-	//		userArray[i].Rating += 1.0
+	//		userArray[i].Rating += 1
 	//	}
 	//}
-	//
-	//fmt.Println("After")
-	//
-	//for i := range userArray {
-	//	fmt.Println(userArray[i])
+
+	//for _, u := range userArray {  ТУТ ДОБАВЛЯЕТСЯ КОПИЯ, ОРИГИНАЛ НЕ МЕНЯЕТСЯ
+	//	if u.Premium {
+	//		u.Rating += 1
+	//	}
 	//}
+
+	for i, _ := range userArray { // верный вариант, но синтаксис лучше как в самом первом
+		if userArray[i].Premium {
+			userArray[i].Rating += 1
+		}
+	}
+
+	for i := range userArray {
+		fmt.Println(userArray[i])
+	}
+}
+
+type User struct {
+	Name    string
+	Rating  float64
+	Premium bool
 }
