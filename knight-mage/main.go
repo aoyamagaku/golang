@@ -26,7 +26,7 @@ func (m *Mage) TakeDamage(amount int) {
 	}
 }
 
-func (m Mage) Status() string {
+func (m *Mage) Status() string {
 	return fmt.Sprintf("%s is %d HP", m.Name, m.HP)
 }
 
@@ -39,7 +39,7 @@ func (w *Warrior) TakeDamage(amount int) {
 	}
 }
 
-func (w Warrior) Status() string {
+func (w *Warrior) Status() string {
 	return fmt.Sprintf("%s is %d HP", w.Name, w.HP)
 }
 
